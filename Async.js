@@ -11,29 +11,36 @@
 // let jsonFormat=JSON.stringify(jsObject);
 // console.log(jsonFormat);
 
-    let url="http://catfact.ninja/fact";
-    fetch(url)
-    .then((res)=>{
-        // console.log(res);
-        return res.json();
-    })
-    .then((data)=>{
+  let url="https://catfact.ninja/fact";
+    // fetch(url)
+    // .then((res)=>{
+    //     // console.log(res);
+    //     return res.json();
+    // })
+    // .then((data)=>{
+    //     console.log(data.fact);
+    //    return fetch(url);
+    // })
+    // .then((res)=>{
+    //     return res.json();
+    // })
+    // .then((data)=>{
+    //     console.log(data.fact);
+    //     return fetch(url);
+    // })
+    // .then((res)=>{
+    //     return res.json();
+    // })
+    // .then((data)=>{
+    // console.log(data.fact);
+    // })
+    // .catch((err)=>{
+    //     console.log(err);
+    // });
+
+    async function getFacts() {
+        let res= await fetch(url);
+        let data= await res.json();
         console.log(data.fact);
-       return fetch(url);
-    })
-    .then((res)=>{
-        return res.json();
-    })
-    .then((data)=>{
-        console.log(data.fact);
-        return fetch(url);
-    })
-    .then((res)=>{
-        return res.json();
-    })
-    .then((data)=>{
-    console.log(data.fact);
-    })
-    .catch((err)=>{
-        console.log(err);
-    });
+    }
+    getFacts();
